@@ -22,7 +22,7 @@ public class Main {
                 System.out.println("Syntax Error: Please enter a valid input");
                 System.exit(0);
             }
-            
+            //Ensures numbers with more than one digit are not split across indices
             int n = 0;
             while ((i+n < input.length()-1) && (isInt(input.substring(i+n, i+n+1)) && isInt(input.substring(i+n+1, i+n+2)))) {
                 n++;
@@ -31,11 +31,7 @@ public class Main {
             i += n;
         }
 
-        System.out.println(eq1);
-        
-        System.out.println("Total is " + (calculate(eq1)).get(0));
-
-        //System.out.println(input + " = " + recursionCalculate(input));
+        System.out.println("Total is " + (calculate(eq1)).get(0) + ".");
 
     }
 
@@ -94,8 +90,6 @@ public class Main {
                 equation.set(powPos-1, Integer.toString(total));
                 equation.remove(powPos+1);
                 equation.remove(powPos);
-                
-                System.out.println(equation);
 
             }
 
@@ -106,7 +100,6 @@ public class Main {
                 equation.set(mulPos-1, Integer.toString(total));
                 equation.remove(mulPos+1);
                 equation.remove(mulPos);
-                System.out.println(equation);
 
             }
 
@@ -119,7 +112,6 @@ public class Main {
                 equation.remove(divPos+1);
                 equation.remove(divPos);
                 
-                System.out.println(equation);
             } 
 
             //Checks for statmements with addition
@@ -131,7 +123,6 @@ public class Main {
                 equation.remove(addPos+1);
                 equation.remove(addPos);
                 
-                System.out.println(equation);
             }
 
             //Checks for statmements with subtraction
@@ -143,7 +134,6 @@ public class Main {
                 equation.remove(subPos+1);
                 equation.remove(subPos);
                  
-                System.out.println(equation);
             }
         }
 
